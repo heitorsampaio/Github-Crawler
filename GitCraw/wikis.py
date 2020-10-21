@@ -13,7 +13,7 @@ class Wikis(Strategy):
         Get gh types
         """
 
-        return 'Wikies'
+        return 'Wikis'
 
     def search_gh_data(self, soup):
         wikis_url = []
