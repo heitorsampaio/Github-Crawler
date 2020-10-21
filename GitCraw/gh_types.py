@@ -1,7 +1,24 @@
+import logging
+
+from abc import ABC, abstractmethod
+from issues import Issues
+from repos import Respositories
+from wikis import Wikis
 
 
-class GithubTypes(object):
+class GHTypes(ABC):
     """
     GitHub types to select
     """
-    pass
+
+    factory = {}
+    factory["Repositories"] = Respositories()
+    factory["Issues"] = Issues()
+    factory["Wikis"] = Wikis()
+
+    @classmethod
+    def factory_method(self, gh_types):
+        if gh_types in GHTypes.factory.keys():
+            return GHTypes.factory[gh_types]
+        else:
+            return None
