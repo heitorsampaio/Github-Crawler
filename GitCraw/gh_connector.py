@@ -1,7 +1,7 @@
 import requests
 
 from itertools import cycle
-from proxy import Proxy
+from GitCraw.proxy import Proxy
 
 
 class GitHubConnectos(object):

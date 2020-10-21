@@ -14,9 +14,9 @@ class Verify:
     def verify_keywords(self, keywords):
         return isinstance(keywords, str)
 
-    def verify_params(self, args):
-        if self.verify_keywords(args[1]):
-            if self.verified_type(args[2]):
+    def verify_params(self, keywords, gh_type):
+        if self.verify_keywords(keywords):
+            if self.verified_type(gh_type):
                 return True
             else:
                 print("There is an error in the type of search. Please send Repositories, Issues or Wikis")

@@ -1,6 +1,6 @@
 import json
 
-from strategy import Strategy
+from GitCraw.strategy import Strategy
 
 
 class Wikis(Strategy):
@@ -15,7 +15,7 @@ class Wikis(Strategy):
 
         return 'Wikies'
 
-    def search_gitHub_data(self, soup):
+    def search_gh_data(self, soup):
         wikis_url = []
         wikis = soup.findAll("div", {"class": "f4 text-normal"})
         for wiki in wikis:

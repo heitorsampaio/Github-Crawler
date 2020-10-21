@@ -1,6 +1,6 @@
 import json
 
-from strategy import Strategy
+from GitCraw.strategy import Strategy
 
 
 class Issues(Strategy):

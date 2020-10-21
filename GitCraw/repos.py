@@ -2,7 +2,7 @@ import json
 import requests
 
 from bs4 import BeautifulSoup
-from strategy import Strategy
+from GitCraw.strategy import Strategy
 
 
 class Respositories(Strategy):

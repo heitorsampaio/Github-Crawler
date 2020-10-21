@@ -1,4 +1,4 @@
-from strategy import Strategy
+from GitCraw.strategy import Strategy
 from bs4 import BeautifulSoup
 
 
@@ -28,4 +28,4 @@ class Type:
             print("There isn't an output with the specific search. Please try again")
             return {"url": "None"}
         else:
-            return self._strategy.search_gitHub_data(soup)
+            return self._strategy.search_gh_data(soup)

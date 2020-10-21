@@ -1,9 +1,9 @@
 import logging
 
 from abc import ABC, abstractmethod
-from issues import Issues
-from repos import Respositories
-from wikis import Wikis
+from GitCraw.issues import Issues
+from GitCraw.repos import Respositories
+from GitCraw.wikis import Wikis
 
 
 class GHTypes(ABC):
