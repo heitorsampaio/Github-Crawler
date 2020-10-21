@@ -12,14 +12,14 @@ class GitHubConnectos(object):
     def __init__(self):
         self.url = "https://github.com/search?q={}&type={}"
 
-    def get_content(self, data):
+    def get_content(self, keyword, gh_type):
         proxyClass = Proxy()
         proxies = proxyClass.get_proxies()
         proxy_pool = cycle(proxies)
         for i in range(1, 11):
             proxy = next(proxy_pool)
             try:
-                url = self.url_format(data)
+                url = self.url_format(keyword, gh_type)
                 response = requests.get(
                     url, proxies={"http://" + proxy: "https://" + proxy})
                 if response.status_code == 200:
@@ -29,6 +29,6 @@ class GitHubConnectos(object):
             except Exception as e:
                 print(str(e))
 
-    def url_format(self, words):
-        keywords = words[1].replace(",", "+")
-        return self.url.format(keywords, words[2])
+    def url_format(self, keyword, gh_type):
+        keywords = keyword.replace(",", "+")
+        return self.url.format(keywords, gh_type)

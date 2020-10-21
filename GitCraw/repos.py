@@ -22,10 +22,10 @@ class Respositories(Strategy):
         data["extra"]["owner"] = soup.find("a", {"rel": "author"}).text
         data["extra"]["language_stats"] = {}
         languages = soup.findAll(
-            "span", {"class": "language-color", "itemprop": "keywords"})
+            "span", {"itemprop": "programmingLanguage"})
         for language in languages:
-            l = language.get("aria-label").split(" ")
-            data["extra"]["language_stats"][l[0]] = l[1]
+            l = language.text
+            data["extra"]["language_stats"][l] = l
         return data
 
     def search_gh_data(self, soup):

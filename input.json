@@ -1,8 +1,6 @@
 {
     "keywords": [
-        "python",
-        "django-rest-framework",
-        "jwt"
+        "tensorflow"
     ],
     "proxies": [
       "194.126.37.94:8080",

@@ -21,7 +21,7 @@ class Crawler:
         try:
             gh_types = GHTypes.factory_method(gh_type)
             type = Type(gh_types)
-            return type.search_params(self.github.get_content(keywords))
+            return type.search_params(self.github.get_content(keywords, gh_type))
         except Exception as e:
             print(str(e))
             self.usage()
